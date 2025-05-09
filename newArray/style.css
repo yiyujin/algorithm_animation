@@ -1,0 +1,47 @@
+* {
+    font-family : Arial;
+}
+
+.code>* {
+    font-family : monospace;
+}
+
+.rects {
+    display : flex;
+    opacity : 0;
+}
+
+.rects>span {
+    width : 40px;
+    height : 40px;
+
+    background-color: #dd0619;
+    border : 1px solid white;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rects>span>p {
+    opacity: 0;
+    color : white;
+    text-align: center;
+    font-size : 12px;
+}
+
+.code {
+    display: flex;
+    position : absolute;
+    top : 200px;
+}
+
+button {
+    background-color: #eeeeee;
+    border : 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    padding : 4px 8px;
+
+    font-size : 10px;
+}
