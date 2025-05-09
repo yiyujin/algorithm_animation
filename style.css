@@ -1,0 +1,164 @@
+* {
+    font-family : Arial;
+
+    /* box-shadow: 0px 0px 0.5px 0.5px cyan; */
+
+    margin : 0;
+}
+
+body {
+    width : 100%;
+}
+
+:root {
+    --font-size-huge : 20px;
+    --font-size-large : 16px;
+    --font-size-medium : 14px;
+    --font-size-small : 12px;
+    --font-size-tiny : 10px;
+
+    /* COLORS */
+    --pt : #dd0619;
+    --variable : #00abd1;
+    --highlight : #dd0619;
+
+    --black40 : rgba(0, 0, 0, 0.4);
+    --black24 : rgba(0, 0, 0, 0.24);
+    --black16 : rgba(0, 0, 0, 0.16);
+    --black8 : rgba(0, 0, 0, 0.08);
+    --black4 : rgba(0, 0, 0, 0.04);
+    --black2 : rgba(0, 0, 0, 0.04);
+}
+
+/* HTML ELEMENTS */
+pre {
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+code {
+    font-size : var(--font-size-small);
+    font-family: monospace;
+
+    margin : 0;
+    padding: 0;
+}
+
+code>* {
+    font-size : inherit;
+    font-family: inherit;
+}
+
+code>button {
+    background-color: transparent;
+    border : none;
+    padding :0;
+
+    font-size : inherit;
+
+    color : var(--highlight);
+}
+
+/* TOOLTIP */
+.tooltip {
+    position : relative;
+    box-sizing: content-box;
+
+    color : var(--variable);
+}
+  
+  .tooltip .tooltiptext {
+    font-family: monospace;
+    font-size : var(--font-size-tiny);
+
+    visibility: hidden;
+    background-color: white;
+    border : 1px solid var(--black16);
+    
+    border-radius: 2px;
+    padding: 6px 8px;
+  
+    position: absolute;
+    bottom: 100%;
+    left : 0;
+    z-index: 1;
+    
+    /* white-space: pre; */
+  }
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* CLASSES */
+.page {
+    
+
+    display: flex;
+    flex-direction: row;
+}
+
+.page>div {
+    padding : 16px;
+}
+
+.analysis {
+    width : 140px;
+}
+
+.code {
+    flex : 1;
+}
+/* 
+.sketch {
+    flex : 1;
+
+    background-color : #eee;
+
+    width : 400px;
+} */
+
+.rects {
+    position: absolute;
+    display : flex;
+    opacity : 0;
+}
+
+.rects>span {
+    width : 40px;
+    height : 40px;
+
+    background-color: var(--pt);
+    border : 1px solid white;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rects>span>p {
+    opacity: 0;
+    color : white;
+    text-align: center;
+    font-size : 12px;
+}
+
+button {
+    background-color: #eeeeee;
+    border : 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    padding : 4px 8px;
+
+    font-size : 10px;
+}
+
+.meta {
+    font-size : var(--font-size-small);
+    font-weight : 600;
+    text-transform: uppercase;
+}
+

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div class = "page">
+      <div class = "analysis">
+        <p class = "meta">Bingo</p>
+      </div>
+
+        <div class = "code">
+        <pre>
+            <code class = "javascript">
+let input = `11 12 2 24 10
+16 1 13 3 25
+6 20 5 21 17
+19 4 8 14 9
+22 15 7 23 18
+5 10 7 16 2
+4 22 8 17 13
+3 18 1 6 25
+12 19 23 14 21
+11 24 9 20 15`;
+
+<span class = "tooltip">input<span class = "tooltiptext">[
+  '11 12 2 24 10',
+  '16 1 13 3 25',
+  '6 20 5 21 17',
+  '19 4 8 14 9',
+  '22 15 7 23 18',
+  '5 10 7 16 2',
+  '4 22 8 17 13',
+  '3 18 1 6 25',
+  '12 19 23 14 21',
+  '11 24 9 20 15'
+]</span></span> = input.split("\n");
+
+let <span class = "tooltip">board<span class = "tooltiptext">[
+  '11 12 2 24 10',
+  '16 1 13 3 25',
+  '6 20 5 21 17',
+  '19 4 8 14 9',
+  '22 15 7 23 18'
+]
+</span></span> = input.slice(0,5);
+
+let <span class = "tooltip">calls<span class = "tooltiptext">[
+  '5 10 7 16 2',
+  '4 22 8 17 13',
+  '3 18 1 6 25',
+  '12 19 23 14 21',
+  '11 24 9 20 15'
+]</span></span> = input.slice(5);
+
+<span class = "tooltip">board<span class = "tooltiptext">[
+  [ 11, 12, 2, 24, 10 ],
+  [ 16, 1, 13, 3, 25 ],
+  [ 6, 20, 5, 21, 17 ],
+  [ 19, 4, 8, 14, 9 ],
+  [ 22, 15, 7, 23, 18 ]
+]</span></span> = board.map( ( item ) => item.split(" ").map(Number) );
+
+<span class = "tooltip">calls<span class = "tooltiptext">[ 5, 10, 7, 16, 24, 22, 8, 17, 13, 3, 18, 1, 6, 25, 12, 19, 23, 14, 21, 11, 24, 9, 20, 15 ]</span></span> = calls.flatMap( ( item ) => item.split(" ").map(Number) );
+
+let marked = [];
+
+for(let i = 0; i < 5; i++){
+<span class = "tooltip">  marked<span class = "tooltiptext">[
+  [ false, false, false, false, false ],
+  [ false, false, false, false, false ],
+  [ false, false, false, false, false ],
+  [ false, false, false, false, false ],
+  [ false, false, false, false, false ]
+]</span></span>.push(<button id = "button1">new Array(5)</button>.<button id = "button2">fill(false)</button>);
+}
+
+let posMap = new Map();
+
+for(let i = 0; i < 5; i++){
+  for(let j = 0; j < 5; j++){
+    let num = board[i][j];
+    let pos = [i, j]; // [x, y]
+
+  <span class = "tooltip">  posMap<span class = "tooltiptext">Map(25)
+{
+  11 => [ 0, 0 ],
+  12 => [ 0, 1 ],
+  2 => [ 0, 2 ],
+  24 => [ 0, 3 ],
+  10 => [ 0, 4 ],
+  16 => [ 1, 0 ],
+  1 => [ 1, 1 ],
+  13 => [ 1, 2 ],
+  3 => [ 1, 3 ],
+  25 => [ 1, 4 ],
+  6 => [ 2, 0 ],
+  20 => [ 2, 1 ],
+  5 => [ 2, 2 ],
+  21 => [ 2, 3 ],
+  17 => [ 2, 4 ],
+  19 => [ 3, 0 ],
+  4 => [ 3, 1 ],
+  8 => [ 3, 2 ],
+  14 => [ 3, 3 ],
+  9 => [ 3, 4 ],
+  22 => [ 4, 0 ],
+  15 => [ 4, 1 ],
+  7 => [ 4, 2 ],
+  23 => [ 4, 3 ],
+  18 => [ 4, 4 ]
+}</span></span>.set(num, pos);
+  }
+}
+            </code>
+        </pre>
+    </div>
+
+    <div class = "sketch">
+        <div class = "rects">
+            <span>
+                <p>false</p>
+            </span>
+            <span>
+                <p>false</p>
+            </span>
+            <span>
+                <p>false</p>
+            </span>
+            <span>
+                <p>false</p>
+            </span>
+            <span>
+                <p>false</p>
+            </span>
+        </div>
+
+        <script src="sketch.js"></script>
+    </div>
+    </div>
+  </body>
+</html>
