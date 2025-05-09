@@ -1,3 +1,5 @@
+import hljs from 'highlight.js';
+
 document.getElementById("button1").addEventListener( 'click' , () => {
     gsap.to(
         ".rects>span>p",
